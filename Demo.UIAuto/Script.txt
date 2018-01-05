@@ -1,0 +1,20 @@
+﻿var desktop = AutomationElement.RootElement;
+var condition = new PropertyCondition(AutomationElement.AutomationIdProperty, "Form1");
+var window = desktop.FindFirst(TreeScope.Children, condition);
+
+var textBox1 = window.FindFirst(TreeScope.Children, new PropertyCondition(AutomationElement.AutomationIdProperty, "textBox1"));
+var textBox2 = window.FindFirst(TreeScope.Children, new PropertyCondition(AutomationElement.AutomationIdProperty, "textBox2"));
+var button1 = window.FindFirst(TreeScope.Children, new PropertyCondition(AutomationElement.AutomationIdProperty, "button1"));
+
+var vpTextBox1 = (ValuePattern)textBox1.GetCurrentPattern(ValuePattern.Pattern);
+var vpTextBox2 = (ValuePattern)textBox2.GetCurrentPattern(ValuePattern.Pattern);
+//var ipButton1 = (InvokePattern)button1.GetCurrentPattern(InvokePattern.Pattern);
+
+for (int i = 0; i < 10; i++)
+{
+    vpTextBox1.SetValue("text1-" + i);
+    vpTextBox2.SetValue("text2-" + i);
+    textBox2.SetFocus();
+    SendKeys.SendWait("{Enter}");
+    //ipButton1.Invoke();
+}

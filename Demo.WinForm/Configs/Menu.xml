@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menus>
+  <menu id="m1" name="Test">
+    <menu id="m11" name="Tess" />
+  </menu>
+</menus>

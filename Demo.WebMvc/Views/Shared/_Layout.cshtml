@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo MVC</title>
+    <style>
+        *{margin:0;padding:0;list-style:none;}
+        body{font-size:14px;}
+        table{width:100%;border-collapse:collapse;}
+        .wrapper td{border:1px solid #ccc;}
+    </style>
+</head>
+<body>
+    <table class="wrapper">
+        <tr>
+            <td colspan="2"><a href="/">DEMO MVC</a></td>
+        </tr>
+        <tr>
+            <td style="width:150px;">
+                @Html.Partial("Menu")
+            </td>
+            <td style="padding:10px;">
+                @RenderBody()
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
