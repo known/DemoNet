@@ -12,6 +12,12 @@ namespace Demo.WebMvc.Controllers
             return View();
         }
 
+        #region WebSocket
+        public ActionResult WsView()
+        {
+            return View();
+        }
+
         public void WsTask()
         {
             HttpContext.AcceptWebSocketRequest(ctx =>
@@ -21,12 +27,13 @@ namespace Demo.WebMvc.Controllers
                 {
                     for (int i = 0; i < count; i++)
                     {
-                        var message = string.Format("{0:00} {1:yyyy-MM-dd HH:mm:ss}", i + 1, DateTime.Now);
+                        var message = string.Format("{0:yyyyMMdd HH:mm:ss} 消息{1}", DateTime.Now, i + 1);
                         wsm.SendMessageAsync(message);
                         Thread.Sleep(1000);
                     }
                 });
             });
         }
+        #endregion
     }
 }

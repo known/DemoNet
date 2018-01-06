@@ -1,3 +1,4 @@
-﻿<ul>
-    <li>@Html.ActionLink("Html5示例", "Index", "Html5")</li>
+﻿<ul class="nav nav-sidebar">
+    <li class="active"><a href="@Url.Action("Index", "Html5")">Html5 <span class="sr-only">(current)</span></a></li>
+    <li>@Html.ActionLink("WebSocket", "WsView", "Html5")</li>
 </ul>

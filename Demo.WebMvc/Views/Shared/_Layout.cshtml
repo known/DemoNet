@@ -1,28 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Demo MVC</title>
-    <style>
-        *{margin:0;padding:0;list-style:none;}
-        body{font-size:14px;}
-        table{width:100%;border-collapse:collapse;}
-        .wrapper td{border:1px solid #ccc;}
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Microsoft.NET示例程序集。ASP.NET MVC、HTML5等等。">
+    <meta name="author" content="known">
+    <title>我的.NET示例集</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/demo.css" rel="stylesheet" />
+    @RenderSection("Head", false)
 </head>
 <body>
-    <table class="wrapper">
-        <tr>
-            <td colspan="2"><a href="/">DEMO MVC</a></td>
-        </tr>
-        <tr>
-            <td style="width:150px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">.NET示例集</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                @*<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>*@
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
                 @Html.Partial("Menu")
-            </td>
-            <td style="padding:10px;">
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 @RenderBody()
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/demo.js"></script>
+    @RenderSection("Foot", false)
 </body>
 </html>
