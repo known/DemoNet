@@ -1,0 +1,20 @@
+﻿<h2>Pdf预览</h2>
+
+<div>
+    <button class="btn btn-primary" onclick="previewPdf('@Url.Content("~/assets/files/Nginx安全配置指南技术手册.pdf")')">预览</button>
+</div>
+<div id="fileViewer" style="height:500px;"></div>
+
+@section Foot{
+    <script src="~/assets/js/pdfobject.min.js"></script>
+    <script type="text/javascript">
+        function previewPdf(url) {
+            var reg = new RegExp('.pdf$');
+            if (reg.test(url)) {
+                PDFObject.embed(url, '#fileViewer');
+            } else {
+                $('#fileViewer').html('<img src="' + url + '" />');
+            }
+        }
+    </script>
+}
