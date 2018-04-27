@@ -69,9 +69,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data1.xml" />
+    <Content Include="GridViewPage.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Data.xml" />
+    <Content Include="Data.xslt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridViewPage.aspx.cs">
+      <DependentUpon>GridViewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridViewPage.aspx.designer.cs">
+      <DependentUpon>GridViewPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

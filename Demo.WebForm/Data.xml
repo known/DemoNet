@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TaskList>
+  <Task>
+    <TaskId>1</TaskId>
+    <TaskName>Name1</TaskName>
+  </Task>
+  <Task>
+    <TaskId>2</TaskId>
+    <TaskName>Name2</TaskName>
+  </Task>
+</TaskList>
