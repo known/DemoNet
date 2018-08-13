@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menus>
-  <menu id="m1" name="Test">
-    <menu id="m11" name="Tess" />
+  <menu id="UITest" name="UI测试系统">
+    <menu id="OneForm" name="单表单" />
+    <menu id="MoreForm" name="多表单" />
+  </menu>
+  <menu id="Browser" name="浏览器系统">
+    <menu id="IE" name="IE" />
+    <menu id="Webkit" name="Webkit" />
   </menu>
 </menus>
