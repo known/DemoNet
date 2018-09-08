@@ -4,6 +4,9 @@
     <menu id="OneForm" name="单表单" />
     <menu id="MoreForm" name="多表单" />
   </menu>
+  <menu id="Test" name="测试系统">
+    <menu id="CacheForm" name="缓存服务" />
+  </menu>
   <menu id="Browser" name="浏览器系统">
     <menu id="IE" name="IE" />
     <menu id="Webkit" name="Webkit" />

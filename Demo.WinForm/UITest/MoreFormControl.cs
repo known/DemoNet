@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Demo.WinForm.UITest
 {
+    [ToolboxItem(false)]
     public partial class MoreFormControl : UserControl
     {
         public MoreFormControl()

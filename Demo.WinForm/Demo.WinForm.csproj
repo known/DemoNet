@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Imager.cs" />
+    <Compile Include="Test\CacheFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Test\CacheFormControl.Designer.cs">
+      <DependentUpon>CacheFormControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UITest\Runner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="WSHelper.cs" />
+    <EmbeddedResource Include="Test\CacheFormControl.resx">
+      <DependentUpon>CacheFormControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UITest\Runner.resx">
       <DependentUpon>Runner.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,9 +129,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Configs\Menu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
