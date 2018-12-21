@@ -26,7 +26,7 @@ namespace Demo.WebMvc
                 "{controller}/{action}/{id}",                                                   //带有参数的 URL
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },      //参数默认值
                 new string[] { "Sardf.Web.Controllers" }
-            ).RouteHandler = new CustomRouteHandler(); ;
+            ).RouteHandler = new CustomRouteHandler();
         }
 
         protected void Session_Start(object sender, EventArgs e)

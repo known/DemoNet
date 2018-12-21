@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Routing;
 
@@ -10,8 +12,32 @@ namespace Demo.WebMvc.Code
         {
             //if (HasQueryStringKey("routeInfo", requestContext.HttpContext.Request))
             //{
-                OutputRouteDiagnostics(requestContext.RouteData, requestContext.HttpContext);
+            //    OutputRouteDiagnostics(requestContext.RouteData, requestContext.HttpContext);
             //}
+            var controller = requestContext.RouteData.Values["controller"] as string;
+            var action = requestContext.RouteData.Values["action"] as string;
+
+            var serviceType = Type.GetType($"Demo.Services.{controller}Service,Demo");
+            if (serviceType != null)
+            {
+                var request = requestContext.HttpContext.Request;
+                var response = requestContext.HttpContext.Response;
+
+                var service = Activator.CreateInstance(serviceType);
+                var method = serviceType.GetMethod(action);
+                if (method != null)
+                {
+                    var parameters = new List<object>();
+                    foreach (var key in request.QueryString.AllKeys)
+                    {
+                        parameters.Add(request.QueryString[key]);
+                    }
+                    var result = method.Invoke(service, parameters.ToArray());
+                    response.Write(result);
+                }
+
+                response.End();
+            }
 
             var handler = new CustomMvcHandler(requestContext);
             return handler;

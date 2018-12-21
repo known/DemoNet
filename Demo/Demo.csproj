@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\TestService.cs" />
     <Compile Include="Web\Html5\MessageInfo.cs" />
     <Compile Include="Web\Html5\WebSocketManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
